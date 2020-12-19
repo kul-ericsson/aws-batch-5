@@ -27,3 +27,13 @@ foreach($instance in (aws ec2 describe-instances | ConvertFrom-Json).Reservation
 foreach( $vol in (aws ec2 describe-volumes | ConvertFrom-Json).Volumes.VolumeId){
     aws ec2 delete-volume --volume-id $vol
 }
+
+# AWS S3 Bucket Commands
+
+aws s3 ls
+aws s3 mb s3://thinknyx-ericsson-batch-5
+aws s3 rb s3://thinknyx-ericsson-batch-5
+aws s3 ls s3://thinknyx-ericsson-batch-5
+aws s3 ls s3://thinknyx-ericsson-batch-5 --recursive
+aws s3 cp .\Attendence.xlsx s3://thinknyx-ericsson-batch-5/attendence.xlsx
+aws s3 cp .\create-Server.ps1 s3://thinknyx-ericsson-batch-5/scripts/
