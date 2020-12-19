@@ -9,7 +9,7 @@ phases:
       - mvn clean package
   post_build: 
     commands: 
-      - docker image build -t thinknyx:app-1.0
+      - docker image build -t thinknyx:app-1.0 .
 artifacts: 
   files: 
     - target/LiquorShop.war
