@@ -37,3 +37,9 @@ aws s3 ls s3://thinknyx-ericsson-batch-5
 aws s3 ls s3://thinknyx-ericsson-batch-5 --recursive
 aws s3 cp .\Attendence.xlsx s3://thinknyx-ericsson-batch-5/attendence.xlsx
 aws s3 cp .\create-Server.ps1 s3://thinknyx-ericsson-batch-5/scripts/
+
+# Commands for CloudFormation Stacks
+
+foreach($stack in (aws cloudformation describe-stacks | ConvertFrom-Json).Stacks){
+    aws cloudformation delete-stack --stack-name $stack.StackName
+}
