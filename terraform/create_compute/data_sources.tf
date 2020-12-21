@@ -6,3 +6,10 @@ data "aws_ami" "thinknyx_ami" {
     values = ["ericsson-batch-5-ubuntu-image"]
   }
 }
+
+data "aws_subnet" "thinknyx_public_subnet" {
+  filter {
+    name = "tag:Name"
+    values = ["thinknyx_subnet_1"]
+  }
+}
