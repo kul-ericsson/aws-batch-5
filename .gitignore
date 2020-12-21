@@ -2,3 +2,6 @@
 *.txt
 *.log
 target/
+*terraform
+*state*
+*lock
