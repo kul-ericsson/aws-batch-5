@@ -14,7 +14,7 @@ resource "aws_security_group" "thinknyx_security_group" {
   }
   ingress {
     cidr_blocks = [ var.your_ip ]
-    description = "SSH Port"
+    description = "MYSQL Port"
     from_port = 3306
     to_port = 3306
     protocol = "tcp"
