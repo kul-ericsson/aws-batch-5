@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 provider "mysql" {
-  endpoint = output.database_server_enpoint
-  username = output.database_server_username
-  password = output.database_server_password
+  endpoint = aws_db_instance.thinknyx_db_server.endpoint
+  username = aws_db_instance.thinknyx_db_server.username
+  password = aws_db_instance.thinknyx_db_server.password
 }
