@@ -19,6 +19,15 @@ data "aws_subnet" "thinknyx_private_subnet" {
   vpc_id = data.aws_vpc.thinknyx_vpc.id
 }
 
+data "aws_subnet" "thinknyx_private_subnet_2" {
+  availability_zone = "us-east-2c"
+  vpc_id = data.aws_vpc.thinknyx_vpc.id
+}
+
+/*data "aws_subnet_ids" "thinknyx_vpc_subnet_ids" {
+  vpc_id = data.aws_vpc.thinknyx_vpc.id
+}*/
+
 data "aws_vpc" "thinknyx_vpc" {
   filter {
     name = "tag:Name"
