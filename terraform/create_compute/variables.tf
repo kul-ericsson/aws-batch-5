@@ -5,3 +5,7 @@ variable "your_name" {
 variable "availability_zone" {
   type = string
 }
+
+variable "your_ip" {
+  type = string
+}
