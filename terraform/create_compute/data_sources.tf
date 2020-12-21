@@ -14,6 +14,11 @@ data "aws_subnet" "thinknyx_public_subnet" {
   }
 }
 
+data "aws_subnet" "thinknyx_private_subnet" {
+  availability_zone = var.availability_zone
+  vpc_id = data.aws_vpc.thinknyx_vpc.id
+}
+
 data "aws_vpc" "thinknyx_vpc" {
   filter {
     name = "tag:Name"
