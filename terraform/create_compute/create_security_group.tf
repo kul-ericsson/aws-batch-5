@@ -12,6 +12,13 @@ resource "aws_security_group" "thinknyx_security_group" {
     to_port = 22
     protocol = "tcp"
   }
+  ingress {
+    cidr_blocks = [ var.your_ip ]
+    description = "SSH Port"
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+  }
   egress {
     cidr_blocks = [ "0.0.0.0/0" ]
     description = "All Outbound Traffic is Open"
