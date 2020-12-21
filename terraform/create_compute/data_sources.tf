@@ -13,3 +13,10 @@ data "aws_subnet" "thinknyx_public_subnet" {
     values = ["thinknyx_subnet_1"]
   }
 }
+
+data "aws_vpc" "thinknyx_vpc" {
+  filter {
+    name = "tag:Name"
+    values = ["thinknyx_vpc"]
+  }
+}
