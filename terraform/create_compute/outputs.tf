@@ -10,7 +10,7 @@ output "database_server_address" {
   value = aws_db_instance.thinknyx_db_server.address
 }
 
-output "database_server_enpoint" {
+output "database_server_endpoint" {
   value = aws_db_instance.thinknyx_db_server.endpoint
 }
 
